@@ -2,21 +2,16 @@ import React from "react";
 
 function Form({inputText, setInputText, todos, setTodos, setStatus}) {
 	function inputTextHandler(e) {
-		// console.log(e.target.value);
 		setInputText(e.target.value);
 	}
 	function submitTodoHandler(e) {
 		e.preventDefault();
 		setTodos([
-			// ... meinaa että jos siellä on jo jotain todoja, niin ne passataan
 			...todos, {text: inputText, completed: false, id: Math.random() * 1000}
 		]);
 		setInputText("");
 	}
 	function statusHandler(e) {
-		// Tulostaa mikä status valittuna
-		// console.log(e.target.value);
-		// Vaihdetaan statusta:
 		setStatus(e.target.value);
 	}
 

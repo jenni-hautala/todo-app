@@ -7,8 +7,6 @@ import TodoList from "./components/TodoList";
 
 function App() {
 	// States
-	// Statet täytyy olla parentissa, koska ei voi mennä ylöspäin hierarkiassa
-	// Status on oletuksena all
 	const [inputText, setInputText] = useState("");
 	const [todos, setTodos] = useState([]);
 	const [status, setStatus] = useState("all");
@@ -26,8 +24,6 @@ function App() {
 	}, [todos, status]);
 
 	// Functions
-
-	// Pitää ajaa aina kun submitataan tai vaihetaan statusta --> useEffect!
 	function filterHandler() {
 		switch (status) {
 			case "completed":
@@ -62,7 +58,6 @@ function App() {
 		<header>
 			<h1>Awesome Todo List</h1>
 		</header>
-		{/* Tarvitaan Formissa todossia ja setTodossia */}
 		<Form
 			todos={todos}
 			setTodos={setTodos}
